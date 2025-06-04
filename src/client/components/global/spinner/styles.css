@@ -1,0 +1,21 @@
+.spinner-background {
+  position: fixed; /* Fixed positioning makes the div cover the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  display: flex; /* Flexbox for centering the spinner */
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 9999; /* Ensure the background is above other elements */
+}
+
+.spinner {
+  height: 150px;
+  width: 150px;
+  background: linear-gradient(to right, #333 50%, #fff 50%);
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
