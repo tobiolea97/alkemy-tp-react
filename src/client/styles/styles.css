@@ -1,0 +1,406 @@
+/*
+* HOME
+*/
+
+.main-home {
+  max-width: 60%;
+  margin: 20px auto;
+  display: flex;
+  flex-flow: column wrap;
+  grid-column-gap: 20px;
+  grid-row-gap: 5px;  
+}
+
+
+/*
+* LOGIN
+*/
+.logout img:hover {
+  transform: scale(1.2);
+}
+
+.logout img {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.logout p {
+  color: white;
+  font-size: 1em;
+  align-self: center;
+}
+
+.logout {
+  grid-area: logout;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  display: flex;
+}
+
+
+.oauth-background {
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox for centering the spinner */
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.oauth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+.oauth p {
+  color: black;
+}
+
+.oauth:hover {
+  background-color: #f1f1f1;
+}
+
+.oauth img {
+  margin-right: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+.main-login {
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 0;
+}
+
+
+
+/*
+* REVIEW
+*/
+
+.rephrase em {
+  color: #333;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.spinner-background {
+  position: fixed; /* Fixed positioning makes the div cover the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  display: flex; /* Flexbox for centering the spinner */
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 9999; /* Ensure the background is above other elements */
+}
+
+.spinner {
+  height: 150px;
+  width: 150px;
+  background: linear-gradient(to right, #333 50%, #fff 50%);
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+.loading-label {
+  color: #fff; /* White text */
+  margin-top: 20px; /* Space above the label */
+  font-size: 20px; /* Text size */
+  text-align: center; /* Center the text */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.feedback .note:nth-child(odd) {
+  margin-right: 10%;
+  margin-bottom: 10px;
+}
+
+.feedback .note:nth-child(even) {
+  margin-left: 10%;
+  margin-bottom: 10px;
+}
+
+.note:nth-child(1), .note:nth-child(5) {
+  background-color: #04deee;
+}
+
+.note:nth-child(2), .note:nth-child(6)  {
+  background-color: #F5DD61;
+}
+
+.note:nth-child(3), .note:nth-child(7) {
+  background-color: #DC84F3;
+}
+
+.note:nth-child(4), .note:nth-child(8) {
+  background-color: #F266AB;
+}
+
+
+.rephrase {
+  padding: 15px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 10px; 
+  background-color: #c0cecf;
+}
+
+.note {
+  padding: 15px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px; 
+  background-color: #04deee;
+}
+
+
+.title {
+  background-color: #333;
+  color: white;
+  padding: 0px;
+  margin: 0;
+  text-align: center;
+}
+
+.paragraph-number h4 {
+  position: absolute;
+  right: 0; /* Stick to the right border */
+  transform: rotate(-90deg); /* Rotate -90 degrees */
+  transform-origin: top right; /* Pivot from the top right corner */
+  white-space: nowrap;
+  color:white;
+  background-color: #333;
+  padding: 0 20px;
+  border-radius: 5px 5px 0 0;
+}
+
+.paragraph-number {
+  position: relative;
+}
+
+.main-review h2 {
+  align-self: center;
+  justify-self: center;
+}
+
+.main-review .feedback ul li {
+  margin: 0;
+  font-size: 15px;
+}
+
+.main-review .feedback ul {
+  margin: 0 0 0 0;
+}
+
+.main-review .feedback p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.main-review .paragraph h3 {
+  margin: 0 0 10px 0;
+}
+
+.feedback {
+  grid-column: 3/4;
+  grid-row: 2 / span 2;
+  background-color: #9FBB73;
+  padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.rewrite {
+  grid-column: 4/5;
+  grid-row: 2 / span 2;
+  background-color: #F1EB90;
+  padding: 10px 20px;
+}
+
+.paragraph {
+  grid-column: 2/3;
+  grid-row: 2 / span 2;
+  background-color: #F3B664;
+  padding: 10px 20px;
+}
+
+
+.app .main-review  {
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 8fr 8fr 8fr;
+  grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+  grid-column-gap: 20px;
+}
+
+.main-review {
+  grid-area: original-copy;
+  padding: 25px 25px 25px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.main-review p:nth-child(odd) {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.main-review wrong {
+  text-decoration: line-through;
+  font-weight: 900;
+  background-color: rgb(250, 110, 110);
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+.main-review right {
+  background-color: rgb(49, 212, 49);
+  font-weight: 900;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+/************************************************************************************************/
+
+.app {
+  width: 100%;
+  min-width: 900px;
+}
+
+
+
+.app .main-write  {
+  max-width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "instructions textearea" ". controlpanel";
+  grid-column-gap: 20px;
+  grid-row-gap: 5px;
+}
+
+.instructions {
+  grid-area: instructions;
+  background-color: #F1EB90;
+  padding: 10px 25px 15px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.instructions p {
+  color: black;
+  font-weight: 200;
+}
+
+.instructions em {
+  color: black;
+  font-weight: 800;
+  margin: 0 10px 0 10px;
+}
+
+.instructions h2 {
+  color: black;
+  font-size: 26px;
+}
+
+.instructions li {
+  color: black;
+}
+
+.text-area {
+  grid-area: textearea;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.text-area textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 0 0 10px;
+  font-size: 18px;
+  width: 100%;
+  height: 97%;
+}
+
+.control-panel {
+  grid-area: controlpanel;
+  display: grid;
+  grid-template-columns: 45% 25% 10% 20%;
+  grid-template-areas: "error counter goback button";
+}
+
+.control-panel button {
+  grid-area: button;
+  width: auto;
+  background-color: #164863;
+  color: white;
+  padding: 7px 20px 7px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.control-panel button:hover, .control-panel button:focus  {
+  background-color: #5e5e5e;
+}
+
+.control-panel em {
+  grid-area: counter;
+  align-self: center;
+  justify-self: end;
+  margin-right: 15px;
+  font-size: 13px;
+}
+
+.control-panel span {
+  grid-area: error;
+  color:rgb(223, 87, 72);
+  font-weight: 800;
+  align-self: center;
+  justify-self: start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.control-panel a {
+  grid-area: goback;
+  color: #164863;
+  font-size: 16px;
+  align-self: center;
+  justify-self: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.control-panel a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+}
