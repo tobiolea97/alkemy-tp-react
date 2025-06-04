@@ -1,48 +1,27 @@
-import './styles.css'
-import '../../styles.css';
+import "./styles.css";
+import "../../styles.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import UserGrid from "../../components/users/UserGrid.jsx";
+import TitleComponent from "../../components/layout/TitleComponent.jsx";
+import ButtonComponent from "../../components/layout/ButtonComponent.jsx";
 
 function Users() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => setUsers(response.data))
+      .catch((error) => console.error("Error fetching users:", error));
+  }, []);
+
   return (
     <div className="view-main-container">
-      <h2>Usuarios</h2>
-      <table className="grid-table" style={{ margin: "2rem 0" }}>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Ubicacion</th>
-            <th>#</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Juan</td>
-            <td>Perez</td>
-            <td>jperez@mail.com</td>
-            <td>Buenos Aires</td>
-            <td>View | Edit | Delete</td>
-          </tr>
-          <tr>
-            <td>Maria</td>
-            <td>Gomez</td>
-            <td>mgomez@mail.com</td>
-            <td>Madrid</td>
-            <td>View | Edit | Delete</td>
-          </tr>
-          <tr>
-            <td>Pedro</td>
-            <td>Lopez</td>
-            <td>plopez@mail.com</td>
-            <td>Ciudad de Mexico</td>
-            <td>View | Edit | Delete</td>
-          </tr>
-        </tbody>
-      </table>
+      <TitleComponent>Usuarios</TitleComponent>
+      <UserGrid users={users} />
       <div className="buttons-bar">
-        <button className="btn btn-primary" style={{ margin: "1rem 0" }}>
-          Crear
-        </button>
+        <ButtonComponent text="Nuevo Usuario" buttonType="primary" />
       </div>
     </div>
   );

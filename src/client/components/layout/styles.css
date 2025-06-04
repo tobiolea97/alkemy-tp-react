@@ -1,0 +1,15 @@
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.1s;
+    width: fit-content;
+}
+
+.btn-primary {
+    background-color: #546577;
+}
