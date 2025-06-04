@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "descripcion": "Adidas Al Rihla Balón Mundial 2022",
+    "precio": 29999
+  },
+  {
+    "id": 2,
+    "descripcion": "Nike Mercurial Vapor 15 Botines",
+    "precio": 84999
+  },
+  {
+    "id": 3,
+    "descripcion": "Puma Ultra Ultimate Botines",
+    "precio": 79999
+  },
+  {
+    "id": 4,
+    "descripcion": "Adidas Predator Edge Guantes de Arquero",
+    "precio": 25999
+  },
+  {
+    "id": 5,
+    "descripcion": "Nike Strike Balón de Entrenamiento",
+    "precio": 15999
+  },
+  {
+    "id": 6,
+    "descripcion": "Puma TeamGoal 23 Camiseta",
+    "precio": 19999
+  },
+  {
+    "id": 7,
+    "descripcion": "Adidas Tiro 23 Pantalón de Entrenamiento",
+    "precio": 17999
+  },
+  {
+    "id": 8,
+    "descripcion": "Nike Park VII Camiseta",
+    "precio": 13999
+  },
+  {
+    "id": 9,
+    "descripcion": "Puma Future Pro Botines",
+    "precio": 72999
+  },
+  {
+    "id": 10,
+    "descripcion": "Adidas Condivo 22 Camiseta",
+    "precio": 18999
+  }
+]
+

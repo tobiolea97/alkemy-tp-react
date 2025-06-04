@@ -18,13 +18,12 @@ function UserGrid({ users }) {
           </thead>
           <tbody>
             {users.map((user) => {
-              const [nombre, apellido] = user.name.split(" ");
               return (
                 <tr key={user.id}>
-                  <td>{nombre || user.name}</td>
-                  <td>{apellido || ""}</td>
+                  <td>{user.nombre}</td>
+                  <td>{user.apellido}</td>
                   <td>{user.email}</td>
-                  <td>{user.address?.city}</td>
+                  <td>{user.ciudad + ", " + user.pais}</td>
                   <td>View | Edit | Delete</td>
                 </tr>
               );

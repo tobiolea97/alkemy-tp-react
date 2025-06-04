@@ -11,7 +11,7 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/photos")
+      .get("http://localhost:3000/api/products")
       .then((response) => setProducts(response.data.slice(0, 10)))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);

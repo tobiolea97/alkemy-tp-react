@@ -1,0 +1,72 @@
+[
+  {
+    "nombre": "Lionel",
+    "apellido": "Messi",
+    "email": "lmessi@afa.com",
+    "ciudad": "Miami",
+    "pais": "Estados Unidos"
+  },
+  {
+    "nombre": "Emiliano",
+    "apellido": "Martínez",
+    "email": "emartinez@afa.com",
+    "ciudad": "Birmingham",
+    "pais": "Inglaterra"
+  },
+  {
+    "nombre": "Rodrigo",
+    "apellido": "De Paul",
+    "email": "rdepaul@afa.com",
+    "ciudad": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ángel",
+    "apellido": "Di María",
+    "email": "adimaria@afa.com",
+    "ciudad": "Lisboa",
+    "pais": "Portugal"
+  },
+  {
+    "nombre": "Julián",
+    "apellido": "Álvarez",
+    "email": "jalvarez@afa.com",
+    "ciudad": "Manchester",
+    "pais": "Inglaterra"
+  },
+  {
+    "nombre": "Nicolás",
+    "apellido": "Otamendi",
+    "email": "notamendi@afa.com",
+    "ciudad": "Lisboa",
+    "pais": "Portugal"
+  },
+  {
+    "nombre": "Enzo",
+    "apellido": "Fernández",
+    "email": "efernandez@afa.com",
+    "ciudad": "Londres",
+    "pais": "Inglaterra"
+  },
+  {
+    "nombre": "Alexis",
+    "apellido": "Mac Allister",
+    "email": "amacallister@afa.com",
+    "ciudad": "Liverpool",
+    "pais": "Inglaterra"
+  },
+  {
+    "nombre": "Cristian",
+    "apellido": "Romero",
+    "email": "cromero@afa.com",
+    "ciudad": "Londres",
+    "pais": "Inglaterra"
+  },
+  {
+    "nombre": "Nahuel",
+    "apellido": "Molina",
+    "email": "nmolina@afa.com",
+    "ciudad": "Madrid",
+    "pais": "España"
+  }
+]
