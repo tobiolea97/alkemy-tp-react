@@ -1,10 +1,8 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from "./root";
-import Write from "../pages/Write";
-import Review from "../pages/Review";
-import Login from "../pages/Login";
-import Home from "../pages/Home";
-import { PrivateRoute } from "./privateRoute";
+import Products from "../views/Products";
+import Users from "../views/Users";
+import Home from "../views/Home";
 
 const router = createBrowserRouter([
     {
@@ -13,8 +11,8 @@ const router = createBrowserRouter([
       children: [
         { path: "/", element: <Home /> },
         { path: "home", element: <Home />},
-        { path: "write", element: <Write /> },
-        { path: "review", element: <Review /> },
+        { path: "products", element: <Products /> },
+        { path: "users", element: <Users /> },
         { path: "*", element: <Home /> },
       ],
     },

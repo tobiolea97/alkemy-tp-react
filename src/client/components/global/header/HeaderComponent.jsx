@@ -13,11 +13,11 @@ export const HeaderComponent = () => {
               </li>
               <li>|</li>
               <li>
-                <a onClick={() => navigate("/review")}>Usuarios</a>
+                <a onClick={() => navigate("/users")}>Usuarios</a>
               </li>
               <li>|</li>
               <li>
-                <a onClick={() => navigate("/write")}>Productos</a>
+                <a onClick={() => navigate("/products")}>Productos</a>
               </li>
             </ul>
         </header>
