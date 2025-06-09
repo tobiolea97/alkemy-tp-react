@@ -5,6 +5,8 @@ import axios from "axios";
 import UserGrid from "../../components/users/UserGrid.jsx";
 import TitleComponent from "../../components/layout/TitleComponent.jsx";
 import ButtonComponent from "../../components/layout/ButtonComponent.jsx";
+import CardBoard from "../../components/ui/cardboard/CardBoard.jsx";
+import UserCard from "../../components/users/UserCard.jsx";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -19,7 +21,11 @@ function Users() {
   return (
     <div className="view-main-container">
       <TitleComponent>Usuarios</TitleComponent>
-      <UserGrid users={users} />
+      <CardBoard>
+        {users.map((user) => (
+          <UserCard key={user.email} user={user} />
+        ))}
+      </CardBoard>
       <div className="buttons-bar">
         <ButtonComponent text="Nuevo Usuario" buttonType="primary" />
       </div>
