@@ -2,17 +2,9 @@ import express from "express";
 import ViteExpress from "vite-express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { routes } from "./routes/index.js";
 import endpoints from "./routes/endpoints.js";
-import { initializeDbConnection } from './db.js';
 
 const app = express();
-initializeDbConnection();
-
-routes.forEach(route => {
-  app[route.method](route.path, route.handler);
-});
-
 app.use(express.json());
 
 endpoints(app);
