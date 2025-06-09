@@ -9,6 +9,22 @@
   box-sizing: border-box;
 }
 
+.home-content-box {
+  background: rgba(0,0,0,0.7);
+  border-radius: 5px;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-content-box h1,
+.home-content-box h2,
+.home-content-box p {
+  color: #fff;
+}
+
 body, html, #root {
   width: 100vw;
   height: 100vh;
@@ -30,5 +46,5 @@ body, html, #root {
 
 .home-container p {
   font-size: 1.1rem;
-  color: #546577;
+  color: #cfd8dc;
 }
