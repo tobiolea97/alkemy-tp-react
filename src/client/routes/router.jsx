@@ -4,6 +4,7 @@ import Products from "../views/products/Products";
 import Users from "../views/users/Users";
 import Home from "../views/home/Home";
 import UserDetail from "../views/users/UserDetail";
+import ProductDetails from "../views/products/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: "products", element: <Products /> },
       { path: "users", element: <Users /> },
       { path: "users/detail/:id", element: <UserDetail /> },
+      { path: "products/detail/:id", element: <ProductDetails /> },
       { path: "*", element: <Home /> },
     ],
   },

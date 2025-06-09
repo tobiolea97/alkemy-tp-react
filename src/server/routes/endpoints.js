@@ -27,10 +27,6 @@ const endpoints = (app) => {
     res.json(usersArray);
   });
 
-  app.get("/api/products", (req, res) => {
-    res.json(productsArray);
-  });
-
   app.get("/api/users/:id", (req, res) => {
     const id = parseInt(req.params.id, 10);
     const user = usersArray.find((u) => u.id === id);
@@ -38,6 +34,20 @@ const endpoints = (app) => {
       res.json(user);
     } else {
       res.status(404).json({ error: "Usuario no encontrado" });
+    }
+  });
+
+   app.get("/api/products", (req, res) => {
+    res.json(productsArray);
+  });
+
+  app.get("/api/products/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const product = productsArray.find((p) => p.id === id);
+    if (product) {
+      res.json(product);
+    } else {
+      res.status(404).json({ error: "Producto no encontrado" });
     }
   });
 };

@@ -4,7 +4,7 @@ export const Spinner = () => {
     return (
         <div className="spinner-background">
           <div className="spinner"></div>
-          <p className="loading-label">Espere un momento por favor, no sea ansioso.</p>
+          <p className="loading-label">Cargando</p>
         </div>
     )
 }
