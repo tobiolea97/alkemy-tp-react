@@ -1,7 +1,7 @@
-import { createRequire } from 'module';
+import { createRequire } from "module";
 import fs from "fs";
 const require = createRequire(import.meta.url);
-require('dotenv').config();
+require("dotenv").config();
 
 // Cargar datos en memoria al iniciar
 let usersArray = [];
@@ -23,14 +23,23 @@ try {
 
 const endpoints = (app) => {
   app.get("/api/users", (req, res) => {
-    throw new Error("This endpoint is not implemented yet.");
-    //res.json(usersArray);
+    //throw new Error("This endpoint is not implemented yet.");
+    res.json(usersArray);
   });
 
   app.get("/api/products", (req, res) => {
     res.json(productsArray);
   });
-};
 
+  app.get("/api/users/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const user = usersArray.find((u) => u.id === id);
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ error: "Usuario no encontrado" });
+    }
+  });
+};
 
 export default endpoints;

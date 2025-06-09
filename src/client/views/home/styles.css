@@ -1,50 +1,52 @@
 .home-container {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-  box-sizing: border-box;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 .home-content-box {
-  background: rgba(0,0,0,0.7);
-  border-radius: 5px;
-  padding: 2.5rem 2.5rem 2rem 2.5rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-content-box h1,
 .home-content-box h2,
 .home-content-box p {
-  color: #fff;
+    color: #fff;
 }
 
-body, html, #root {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+body,
+html,
+#root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .home-container h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .home-container h2 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .home-container p {
-  font-size: 1.1rem;
-  color: #cfd8dc;
+    font-size: 1.1rem;
+    color: #cfd8dc;
 }

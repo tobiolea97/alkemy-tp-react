@@ -1,73 +1,103 @@
 [
   {
+    "id": 1,
     "nombre": "Lionel",
     "apellido": "Messi",
     "email": "lmessi@afa.com",
     "ciudad": "Miami",
-    "pais": "Estados Unidos"
+    "pais": "Estados Unidos",
+    "altura": 170,
+    "edad": 37
   },
   {
+    "id": 2,
     "nombre": "Emiliano",
     "apellido": "Martínez",
     "email": "emartinez@afa.com",
     "ciudad": "Birmingham",
-    "pais": "Inglaterra"
+    "pais": "Inglaterra",
+    "altura": 195,
+    "edad": 31
   },
   {
+    "id": 3,
     "nombre": "Rodrigo",
     "apellido": "De Paul",
     "email": "rdepaul@afa.com",
     "ciudad": "Madrid",
-    "pais": "España"
+    "pais": "España",
+    "altura": 180,
+    "edad": 30
   },
   {
+    "id": 4,
     "nombre": "Ángel",
     "apellido": "Di María",
     "email": "adimaria@afa.com",
     "ciudad": "Lisboa",
-    "pais": "Portugal"
+    "pais": "Portugal",
+    "altura": 180,
+    "edad": 36
   },
   {
+    "id": 5,
     "nombre": "Julián",
     "apellido": "Álvarez",
     "email": "jalvarez@afa.com",
     "ciudad": "Manchester",
-    "pais": "Inglaterra"
+    "pais": "Inglaterra",
+    "altura": 170,
+    "edad": 24
   },
   {
+    "id": 6,
     "nombre": "Nicolás",
     "apellido": "Otamendi",
     "email": "notamendi@afa.com",
     "ciudad": "Lisboa",
-    "pais": "Portugal"
+    "pais": "Portugal",
+    "altura": 183,
+    "edad": 36
   },
   {
+    "id": 7,
     "nombre": "Enzo",
     "apellido": "Fernández",
     "email": "efernandez@afa.com",
     "ciudad": "Londres",
-    "pais": "Inglaterra"
+    "pais": "Inglaterra",
+    "altura": 178,
+    "edad": 23
   },
   {
+    "id": 8,
     "nombre": "Alexis",
     "apellido": "Mac Allister",
     "email": "amacallister@afa.com",
     "ciudad": "Liverpool",
-    "pais": "Inglaterra"
+    "pais": "Inglaterra",
+    "altura": 176,
+    "edad": 25
   },
   {
+    "id": 9,
     "nombre": "Cristian",
     "apellido": "Romero",
     "email": "cromero@afa.com",
     "ciudad": "Londres",
-    "pais": "Inglaterra"
+    "pais": "Inglaterra",
+    "altura": 185,
+    "edad": 26
   },
   {
+    "id": 10,
     "nombre": "Nahuel",
     "apellido": "Molina",
     "email": "nmolina@afa.com",
     "ciudad": "Madrid",
-    "pais": "España"
+    "pais": "España",
+    "altura": 175,
+    "edad": 26
   }
 ]
 

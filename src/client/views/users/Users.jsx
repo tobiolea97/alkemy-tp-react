@@ -22,10 +22,10 @@ function Users() {
         setTimeout(() => {
           setUsers(response.data);
           setIsLoading(false);
-        }, 3000);
+        }, 2000);
       })
       .catch((error) => {
-        console.error("Error fetching users:", error)
+        console.error("Error fetching users:", error);
         setError("Error al cargar los usuarios.");
         setIsLoading(false);
       });
@@ -34,7 +34,7 @@ function Users() {
   return (
     <div className="view-main-container">
       <TitleComponent>Usuarios</TitleComponent>
-      {error && <div className="error-message">{error}</div>} 
+      {error && <div className="error-message">{error}</div>}
       <CardBoard>
         {isLoading && <SpinnerComponent />}
         {users.map((user) => (
