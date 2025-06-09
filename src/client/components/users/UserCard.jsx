@@ -11,7 +11,7 @@ function UserCard({ user }) {
         {user.ciudad}, {user.pais}
       </div>
       <div className="user-card__actions">
-        <button className="btn btn-link">Ver</button>
+        <button className="btn btn-link">Detalle</button>
         <button className="btn btn-link">Editar</button>
         <button className="btn btn-link">Eliminar</button>
       </div>

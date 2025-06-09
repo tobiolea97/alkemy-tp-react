@@ -23,7 +23,8 @@ try {
 
 const endpoints = (app) => {
   app.get("/api/users", (req, res) => {
-    res.json(usersArray);
+    throw new Error("This endpoint is not implemented yet.");
+    //res.json(usersArray);
   });
 
   app.get("/api/products", (req, res) => {
