@@ -19,7 +19,12 @@ function UserCard({ user }) {
         >
           Detalle
         </button>
-        <button className="btn btn-link">Editar</button>
+        <button
+          className="btn btn-link"
+          onClick={() => navigate(`/users/edit/${user.id}`)}
+        >
+          Editar
+        </button>
         <button className="btn btn-link">Eliminar</button>
       </div>
     </div>
