@@ -127,6 +127,55 @@ const endpoints = (app) => {
       res.status(404).json({ error: "Producto no encontrado" });
     }
   });
+
+  app.put("/api/products/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const productIndex = productsArray.findIndex((p) => p.id === id);
+    if (productIndex === -1) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+    // Actualizar los campos del producto
+    productsArray[productIndex] = { ...productsArray[productIndex], ...req.body };
+    res.json(productsArray[productIndex]);
+  });
+  
+  app.delete("/api/products/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const productIndex = productsArray.findIndex((p) => p.id === id);
+    if (productIndex === -1) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+    
+    productsArray.splice(productIndex, 1);
+    return res.status(204).send();
+  });
+  
+  app.post("/api/products", (req, res) => {
+    const { nombre, precio, categoria } = req.body;
+    // 1) Validación mínima
+    if (!nombre || !precio || !categoria) {
+      return res.status(400).json({ error: "nombre, precio y categoria son obligatorios" });
+    }
+
+    // 2) Verificar duplicado por nombre (ejemplo):
+    const exists = productsArray.some((p) => p.nombre === nombre);
+    if (exists) {
+      return res.status(409).json({ error: "Producto ya registrado" });
+    }
+
+    // 3) Crear producto
+    const newProduct = {
+      id: nextId(productsArray),
+      nombre,
+      precio,
+      categoria,
+    };
+
+    productsArray.push(newProduct);
+
+    // 4) Devolver resultado
+    res.status(201).location(`/api/products/${newProduct.id}`).json(newProduct);
+  });
 };
 
 export default endpoints;
