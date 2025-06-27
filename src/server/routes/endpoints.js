@@ -7,6 +7,16 @@ require("dotenv").config();
 let usersArray = [];
 let productsArray = [];
 
+let currentId = 1;
+function nextId(list) {
+  // obtener el ID máximo actual
+  if (list.length > 0) {
+    const maxId = Math.max(...list.map((item) => item.id));
+    currentId = maxId + 1; // incrementar para el próximo ID
+  }
+  return currentId++;
+}
+
 try {
   const usersData = fs.readFileSync("./data/users.json", "utf8");
   usersArray = JSON.parse(usersData);
@@ -48,7 +58,63 @@ const endpoints = (app) => {
     res.json(usersArray[userIndex]);
   });
 
-   app.get("/api/products", (req, res) => {
+  app.delete("/api/users/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const userIndex = usersArray.findIndex((u) => u.id === id);
+
+    if (userIndex === -1) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    
+    usersArray.splice(userIndex, 1);
+    return res.status(204).send();
+  });
+
+  app.post("/api/users", (req, res) => {
+    const {
+      nombre,
+      apellido,
+      email,
+      ciudad = "",
+      pais = "",
+      altura = null,
+      edad = null,
+    } = req.body;
+
+    // 1) Validación mínima
+    if (!nombre || !apellido || !email) {
+      return res
+        .status(400)
+        .json({ error: "nombre, apellido y email son obligatorios" });
+    }
+
+    // 2) Verificar duplicado por email (ejemplo):
+    const exists = usersArray.some((u) => u.email === email);
+    if (exists) {
+      return res.status(409).json({ error: "Email ya registrado" });
+    }
+
+    // 3) Crear usuario
+    const newUser = {
+      id: nextId(usersArray),
+      nombre,
+      apellido,
+      email,
+      ciudad,
+      pais,
+      altura,
+      edad,
+    };
+
+    usersArray.push(newUser);
+
+    // 4) Devolver resultado
+    // 201 = Created, y Location header con la URL del nuevo recurso
+    res.status(201).location(`/api/users/${newUser.id}`).json(newUser);
+  });
+
+  app.get("/api/products", (req, res) => {
     res.json(productsArray);
   });
 
@@ -64,3 +130,4 @@ const endpoints = (app) => {
 };
 
 export default endpoints;
+

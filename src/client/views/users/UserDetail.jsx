@@ -5,6 +5,8 @@ import SpinnerComponent from "../../components/ui/spinner/SpinnerComponent.jsx";
 
 function UserDetail({ mode }) {
   const isEdit = mode === "edit";
+  const isNew = mode === "new";
+
   const { id } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -23,6 +25,20 @@ function UserDetail({ mode }) {
   useEffect(() => {
     setIsLoading(true);
     setError(null);
+    if (isNew) {
+      setUser(null);
+      setForm({
+        nombre: "",
+        apellido: "",
+        email: "",
+        ciudad: "",
+        pais: "",
+        altura: "",
+        edad: "",
+      });
+      setIsLoading(false);
+      return;
+    }
     fetch(`http://localhost:3000/api/users/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Usuario no encontrado");
@@ -51,20 +67,50 @@ function UserDetail({ mode }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí podrías hacer el fetch para actualizar el usuario si lo deseas
-    // Por ejemplo:
-    // fetch(`http://localhost:3000/api/users/${id}`, { method: "PUT", ... })
-    //   .then(...)
-    //   .catch(...);
-    alert("Datos guardados (simulado)");
-    navigate(-1);
+    setIsLoading(true);
+    setError(null);
+
+    const url = isNew
+      ? "http://localhost:3000/api/users"
+      : `http://localhost:3000/api/users/${id}`;
+
+    const method = isNew ? "POST" : "PUT";
+
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const message =
+          errorData?.error ||
+          (isNew
+            ? "Error al crear el usuario"
+            : "Error al actualizar el usuario");
+        throw new Error(message);
+      }
+
+      const userData = await response.json();
+      setUser(userData);
+
+      alert(isNew ? "Usuario creado correctamente" : "Datos actualizados");
+      navigate(-1);
+    } catch (err) {
+      setError(err.message);
+      alert(err.message); // <--- Mostramos el error como alert
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isLoading) return <SpinnerComponent />;
-  if (error) return <div className="error-message">{error}</div>;
-  if (!user) return null;
 
   return (
     <div className="view-main-container">
@@ -81,7 +127,7 @@ function UserDetail({ mode }) {
               name="nombre"
               value={form.nombre}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />
           </div>
           <div>
@@ -91,7 +137,7 @@ function UserDetail({ mode }) {
               name="apellido"
               value={form.apellido}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />
           </div>
           <div>
@@ -101,7 +147,7 @@ function UserDetail({ mode }) {
               name="email"
               value={form.email}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />
           </div>
           <div>
@@ -111,7 +157,7 @@ function UserDetail({ mode }) {
               name="ciudad"
               value={form.ciudad}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />
           </div>
           <div>
@@ -121,7 +167,7 @@ function UserDetail({ mode }) {
               name="pais"
               value={form.pais}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />
           </div>
           <div>
@@ -131,7 +177,7 @@ function UserDetail({ mode }) {
               name="altura"
               value={form.altura}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />{" "}
             cm
           </div>
@@ -142,11 +188,11 @@ function UserDetail({ mode }) {
               name="edad"
               value={form.edad}
               onChange={handleChange}
-              disabled={!isEdit}
+              disabled={!isEdit && !isNew}
             />{" "}
             años
           </div>
-          {isEdit && (
+          {(isEdit || isNew) && (
             <div>
               <button className="btn btn-primary" type="submit">
                 Guardar
@@ -160,3 +206,4 @@ function UserDetail({ mode }) {
 }
 
 export default UserDetail;
+

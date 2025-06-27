@@ -22,7 +22,7 @@ function Users() {
         setTimeout(() => {
           setUsers(response.data);
           setIsLoading(false);
-        }, 2000);
+        }, 500);
       })
       .catch((error) => {
         console.error("Error fetching users:", error);
@@ -42,7 +42,9 @@ function Users() {
         ))}
       </CardBoard>
       <div className="buttons-bar">
-        <ButtonComponent text="Nuevo Usuario" buttonType="primary" />
+        <ButtonComponent text="Nuevo Usuario" buttonType="primary" 
+          onClick={() => window.location.href = "/users/new"}
+        />
       </div>
     </div>
   );
