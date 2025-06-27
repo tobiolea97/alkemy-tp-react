@@ -37,6 +37,17 @@ const endpoints = (app) => {
     }
   });
 
+  app.put("/api/users/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const userIndex = usersArray.findIndex((u) => u.id === id);
+    if (userIndex === -1) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+    // Actualizar los campos del usuario
+    usersArray[userIndex] = { ...usersArray[userIndex], ...req.body };
+    res.json(usersArray[userIndex]);
+  });
+
    app.get("/api/products", (req, res) => {
     res.json(productsArray);
   });
